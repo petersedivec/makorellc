@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import HomeCard from '../../components/HomeCard.astro';
+
+const homes = (await getCollection('homes')).sort((a, b) => a.data.order - b.data.order);
+const groups = [
+  { label: 'Southern California', homes: homes.filter((h) => h.data.market === 'socal') },
+  { label: 'Central Oregon', homes: homes.filter((h) => h.data.market === 'bend') },
+];
+---
+<Base title="Our Homes" description="The rental homes Mako RE owns and manages in Southern California and Bend, Oregon.">
+  <section class="section">
+    <div class="container">
+      <div class="eyebrow">Our homes</div>
+      <h1>Homes we own and care for</h1>
+      <p class="lede">
+        Every home here is owned and managed by us directly — no property-management middleman.
+        Homes marked <span class="badge badge-available">Available</span> are currently listed for rent.
+      </p>
+      {groups.map((g) => (
+        <div class="group">
+          <h2>{g.label}</h2>
+          <div class="grid grid-3">{g.homes.map((home) => <HomeCard home={home} />)}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .group { margin-top: 48px; }
+</style>

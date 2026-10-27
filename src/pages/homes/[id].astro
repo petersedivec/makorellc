@@ -1,0 +1,86 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import { url } from '../../site.config';
+
+export async function getStaticPaths() {
+  const homes = await getCollection('homes');
+  return homes.map((home) => ({ params: { id: home.id }, props: { home } }));
+}
+
+interface Props { home: CollectionEntry<'homes'> }
+const { home } = Astro.props;
+const d = home.data;
+const { Content } = await render(home);
+const photos = [d.hero, ...d.gallery].filter((p) => p !== undefined);
+const inquire = url(`contact/?home=${home.id}`);
+---
+<Base title={`${d.title} · ${d.city}`} description={`${d.type} in ${d.city}, ${d.state}, owned and managed by Mako RE.`}>
+  <section class="section">
+    <div class="container">
+      <a href={url('homes/')} class="back">← All homes</a>
+      <div class="eyebrow">{d.city}, {d.state}</div>
+      <h1>{d.title}</h1>
+      <p class="facts">
+        <span>{d.type}</span>
+        {d.beds && <span>{d.beds} bd</span>}
+        {d.baths && <span>{d.baths} ba</span>}
+        {d.units.length > 0 && <span>{d.units.length} units</span>}
+        <span class={d.status === 'available' ? 'badge badge-available' : 'badge'}>{d.status}</span>
+      </p>
+
+      {photos.length > 0 ? (
+        <div class="photos">
+          {photos.map((p, i) => <Image src={p} alt={`${d.title}, photo ${i + 1}`} widths={[480, 960, 1440]} sizes="(max-width: 800px) 100vw, 560px" />)}
+        </div>
+      ) : (
+        <div class="photo-placeholder">Photos coming soon</div>
+      )}
+
+      <div class="body"><Content /></div>
+
+      {d.units.length > 0 && (
+        <div class="units">
+          <h2>Units</h2>
+          {d.units.map((u) => (
+            <div class="unit card">
+              <div class="card-body unit-head">
+                <h3>{u.name}</h3>
+                <span class="muted">{u.beds} bd · {u.baths} ba</span>
+                <span class={u.status === 'available' ? 'badge badge-available' : 'badge'}>{u.status}</span>
+                {u.zillowUrl && <a href={u.zillowUrl} target="_blank" rel="noopener">View on Zillow →</a>}
+              </div>
+              {u.photos.length > 0 && (
+                <div class="unit-photos">
+                  {u.photos.map((p, i) => <Image src={p} alt={`${u.name}, photo ${i + 1}`} widths={[400, 800]} sizes="(max-width: 700px) 100vw, 360px" />)}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href={inquire}>Inquire about this home</a>
+        {d.zillowUrl && <a class="btn btn-ghost" href={d.zillowUrl} target="_blank" rel="noopener">View listing on Zillow</a>}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .back { display: inline-block; margin-bottom: 18px; text-decoration: none; font-size: 0.92rem; }
+  .facts { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; color: var(--ink-2); }
+  .photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin: 28px 0; }
+  .photos :global(img), .unit-photos :global(img) { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; }
+  .photo-placeholder {
+    margin: 28px 0; aspect-ratio: 21 / 8; display: grid; place-items: center; border-radius: var(--radius);
+    background: linear-gradient(135deg, var(--accent-soft), #fff); color: var(--accent); font-weight: 600;
+  }
+  .body { max-width: 46rem; }
+  .units { margin-top: 40px; display: grid; gap: 20px; }
+  .unit-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+  .unit-head h3 { margin: 0; }
+  .unit-photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; padding: 0 22px 22px; }
+</style>

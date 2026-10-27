@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import TallyEmbed from '../components/TallyEmbed.astro';
+import { SITE } from '../site.config';
+---
+<Base title={`${SITE.surveyYear} Tenant Survey`} noindex>
+  <section class="section">
+    <div class="container narrow">
+      <div class="eyebrow">For current residents</div>
+      <h1>{SITE.surveyYear} Tenant Survey</h1>
+      <p class="lede">
+        Takes about 3 minutes. Your answers shape what we fix and improve next year. Results are
+        shared only as portfolio-wide summaries — never tied to a specific home or person.
+      </p>
+      <TallyEmbed />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .narrow { max-width: 760px; }
+</style>

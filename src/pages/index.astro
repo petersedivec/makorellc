@@ -1,0 +1,78 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import HomeCard from '../components/HomeCard.astro';
+import { SITE, url } from '../site.config';
+
+const homes = (await getCollection('homes')).sort((a, b) => a.data.order - b.data.order);
+const quotes = [
+  "He's consistently responsive and understanding, and even though he isn't local, it never feels that way. It's clear he genuinely cares about his tenants and his property.",
+  "It's never been a question that if something isn't working that it wouldn't be taken care of immediately.",
+  'If there are any issues, response time is prompt and issues are addressed in a timely manner.',
+];
+---
+<Base>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="eyebrow">Owner-operated since 2006</div>
+        <h1>Well-kept rental homes in Southern&nbsp;California &amp; Central&nbsp;Oregon</h1>
+        <p class="lede">
+          {SITE.brand} is a small, hands-on landlord. We own every home we rent, answer our own phone,
+          and fix things fast — and we ask our tenants every year how we're doing.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href={url('homes/')}>See our homes</a>
+          <a class="btn btn-ghost" href={url('contact/')}>Ask about availability</a>
+        </div>
+      </div>
+      <dl class="proof card">
+        <div><dt>{homes.length}</dt><dd>homes we own and manage</dd></div>
+        <div><dt>2</dt><dd>markets: SoCal &amp; Bend, OR</dd></div>
+        <div><dt>9.6<small>/10</small></dt><dd>tenants likely to recommend us (2026 survey)</dd></div>
+        <div><dt>4.8<small>/5</small></dt><dd>maintenance handled promptly</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="head">
+        <div>
+          <div class="eyebrow">Our homes</div>
+          <h2>Six homes, two markets</h2>
+        </div>
+        <a href={url('homes/')}>View all homes →</a>
+      </div>
+      <div class="grid grid-3">
+        {homes.slice(0, 3).map((home) => <HomeCard home={home} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="eyebrow">What our tenants say</div>
+      <h2>Straight from our annual survey</h2>
+      <div class="grid grid-3 quotes">
+        {quotes.map((q) => <blockquote class="card card-body">“{q}”</blockquote>)}
+      </div>
+      <p><a href={url('tenant-survey-results/')}>See the full survey results →</a></p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { padding: 72px 0 64px; }
+  .hero-inner { display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 56px; align-items: center; }
+  .proof { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); margin: 0; }
+  .proof div { background: #fff; padding: 22px 22px 20px; }
+  .proof dt { font-size: 2.1rem; font-weight: 750; letter-spacing: -0.02em; color: var(--accent); line-height: 1.1; }
+  .proof dt small { font-size: 1rem; color: var(--ink-3); font-weight: 600; }
+  .proof dd { margin: 6px 0 0; font-size: 0.9rem; color: var(--ink-2); line-height: 1.4; }
+  .head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 24px; flex-wrap: wrap; }
+  .head h2 { margin: 0; }
+  .quotes { margin: 24px 0; }
+  blockquote { margin: 0; font-size: 1.02rem; color: var(--ink-2); }
+  @media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; gap: 36px; } }
+</style>

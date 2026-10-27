@@ -1,0 +1,16 @@
+---
+import { SITE } from '../site.config';
+---
+{SITE.tallyFormId ? (
+  <>
+    <iframe
+      data-tally-src={`https://tally.so/embed/${SITE.tallyFormId}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`}
+      loading="lazy" width="100%" height="600" frameborder="0" title={`${SITE.surveyYear} Tenant Survey`}
+    ></iframe>
+    <script is:inline async src="https://tally.so/widgets/embed.js"></script>
+  </>
+) : (
+  <div class="card card-body">
+    <p><strong>The {SITE.surveyYear} survey isn't open yet.</strong> We'll email every household when it opens each spring.</p>
+  </div>
+)}

@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import InquiryForm from '../components/InquiryForm.astro';
+import { SITE } from '../site.config';
+
+const homes = (await getCollection('homes'))
+  .sort((a, b) => a.data.order - b.data.order)
+  .map((h) => ({ id: h.id, label: `${h.data.title} · ${h.data.city}, ${h.data.state}`, market: h.data.market }));
+---
+<Base title="Contact" description="Ask Mako RE about rental availability in Southern California and Bend, Oregon.">
+  <section class="section">
+    <div class="container contact">
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h1>Interested in renting with us?</h1>
+        <p class="lede">
+          Tell us a little about what you're looking for. Even if nothing's open right now, we'll keep
+          you in mind — our homes often re-lease to people who reached out early.
+        </p>
+        <p>
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a><br />
+          <a href={SITE.phoneHref}>{SITE.phone}</a>
+        </p>
+      </div>
+      <InquiryForm homes={homes} />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .contact { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: start; }
+  @media (max-width: 900px) { .contact { grid-template-columns: 1fr; gap: 28px; } }
+</style>

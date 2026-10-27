@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE, url } from '../site.config';
+---
+<Base title="About" description="Mako RE is Peter Sedivec's owner-operated rental business in Southern California and Bend, Oregon.">
+  <section class="section">
+    <div class="container about">
+      <div>
+        <div class="eyebrow">About</div>
+        <h1>A landlord who picks up the phone</h1>
+        <p class="lede">
+          {SITE.brand} is {SITE.owner}'s owner-operated rental business. We own every home we rent,
+          in Southern California and Central Oregon, and manage them ourselves.
+        </p>
+        <p>
+          We've been buying, improving, and caring for rental homes for about twenty years. We keep
+          the portfolio small on purpose: it means every tenant has a direct line to the owner, issues
+          get decisions the same day, and homes get the long-term investment that a quick-flip
+          landlord would skip.
+        </p>
+        <p>
+          Since 2024 we've run an annual tenant survey and shared the results — the good and the
+          things to fix — with every household. You can read the
+          <a href={url('tenant-survey-results/')}>results here</a>.
+        </p>
+        <p class="muted">
+          {SITE.owner} is a licensed California real estate professional (DRE #{SITE.dre}).
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href={url('contact/')}>Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .about { max-width: 780px; }
+</style>

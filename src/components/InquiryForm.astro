@@ -1,0 +1,45 @@
+---
+// Rental inquiry form, delivered by Formspree to SITE.email. Until SITE.formspreeId is set,
+// it shows email/phone instead of a form that would go nowhere.
+import { SITE } from '../site.config';
+
+interface Props { homes: { id: string; label: string; market: 'socal' | 'bend' }[] }
+const { homes } = Astro.props;
+---
+{SITE.formspreeId ? (
+  <form class="form" action={`https://formspree.io/f/${SITE.formspreeId}`} method="POST">
+    <div class="form-row">
+      <label>Name<input name="name" autocomplete="name" required /></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required /></label>
+    </div>
+    <div class="form-row">
+      <label>Phone (optional)<input name="phone" type="tel" autocomplete="tel" /></label>
+      <label>Home of interest
+        <select name="home" id="home-select">
+          <option value="">Any / not sure yet</option>
+          <optgroup label="Southern California">
+            {homes.filter((h) => h.market === 'socal').map((h) => <option value={h.id}>{h.label}</option>)}
+          </optgroup>
+          <optgroup label="Central Oregon">
+            {homes.filter((h) => h.market === 'bend').map((h) => <option value={h.id}>{h.label}</option>)}
+          </optgroup>
+        </select>
+      </label>
+    </div>
+    <label>Message<textarea name="message" placeholder="Move-in timing, household size, pets, questions…" required></textarea></label>
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+    <div><button class="btn btn-primary" type="submit">Send inquiry</button></div>
+  </form>
+) : (
+  <div class="card card-body">
+    <p><strong>Reach out directly</strong> — we usually reply within a day.</p>
+    <p><a href={`mailto:${SITE.email}`}>{SITE.email}</a><br /><a href={SITE.phoneHref}>{SITE.phone}</a></p>
+  </div>
+)}
+
+<script>
+  // Pre-select the home when arriving from a property page (?home=<id>).
+  const select = document.getElementById('home-select') as HTMLSelectElement | null;
+  const wanted = new URLSearchParams(location.search).get('home');
+  if (select && wanted) select.value = wanted;
+</script>

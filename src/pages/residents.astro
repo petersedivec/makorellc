@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE, url } from '../site.config';
+---
+<Base title="Current Residents" description="Pay rent, request maintenance, and find resident resources for Mako RE homes.">
+  <section class="section">
+    <div class="container">
+      <div class="eyebrow">Current residents</div>
+      <h1>Everything you need, in one place</h1>
+      <div class="grid grid-3 tiles">
+        <div class="card card-body">
+          <h3>Pay rent &amp; request maintenance</h3>
+          <p class="muted">Rent payments and maintenance requests go through our Stessa tenant portal.</p>
+          {SITE.stessaUrl
+            ? <a class="btn btn-primary" href={SITE.stessaUrl} target="_blank" rel="noopener">Open Stessa portal</a>
+            : <p class="muted">Use the Stessa invite link from your welcome email.</p>}
+        </div>
+        <div class="card card-body">
+          <h3>Urgent issue?</h3>
+          <p class="muted">For anything urgent — water leaks, no heat, safety concerns — call or text right away.</p>
+          <a class="btn btn-ghost" href={SITE.phoneHref}>{SITE.phone}</a>
+        </div>
+        <div class="card card-body">
+          <h3>Renter's insurance</h3>
+          <p class="muted">Every lease requires renter's insurance. Email your policy's declaration page each year when it renews.</p>
+          <a class="btn btn-ghost" href={`mailto:${SITE.email}?subject=Renter's insurance declaration page`}>Email declaration page</a>
+        </div>
+        <div class="card card-body">
+          <h3>Annual tenant survey</h3>
+          <p class="muted">Each spring we ask every household how we're doing — and publish what we learned.</p>
+          <a class="btn btn-ghost" href={url('survey/')}>Take the {SITE.surveyYear} survey</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .tiles { margin-top: 32px; }
+  .tiles .card-body { display: flex; flex-direction: column; align-items: flex-start; }
+  .tiles .btn { margin-top: auto; }
+</style>
