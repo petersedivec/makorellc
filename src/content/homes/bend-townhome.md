@@ -1,9 +1,9 @@
 ---
-title: "Rental home in Bend"
+title: "Townhome in Bend"
 city: "Bend"
 state: "OR"
 market: "bend"
-type: "Rental home"
-order: 5
+type: "Townhome"
+order: 6
 ---
 Description coming soon.

@@ -1,9 +1,9 @@
 ---
-title: "Rental home in Long Beach"
+title: "Fourplex in Long Beach"
 city: "Long Beach"
 state: "CA"
 market: "socal"
-type: "Rental home"
+type: "Fourplex"
 order: 1
 ---
 Description coming soon.

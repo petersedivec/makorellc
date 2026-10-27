@@ -1,9 +1,9 @@
 ---
-title: "Rental home in San Juan Capistrano"
+title: "Triplex in San Juan Capistrano"
 city: "San Juan Capistrano"
 state: "CA"
 market: "socal"
-type: "Rental home"
+type: "Triplex"
 order: 3
 ---
 Description coming soon.
