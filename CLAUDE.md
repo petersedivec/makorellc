@@ -25,3 +25,14 @@ DNS is at GoDaddy. Google Workspace email uses the domain's **MX/TXT records: ne
 - Source photos come from Peter's Google Drive: root folders `NN. <street>` (acquisition order) → `Listing Photos/`.
 - Survey data: past results are in Drive (`Tenant Satisfaction Survey - YYYY (Responses)` sheets, `YYYY Tenant Survey Feedback/Results` docs) and Sent mail ("Tenant Survey"). Future surveys run on Tally (`SITE.tallyFormId`), embedded at `/survey/` (noindex, excluded from the sitemap).
 - External IDs pending Peter's signups: `formspreeId`, `tallyFormId`, `stessaUrl` in `src/site.config.ts`. The components fall back to email/phone until set.
+
+## Status (end of 2026-10-27)
+Done: skeleton, all pages, survey results (2024 + 2026 from full response CSVs), unit lists, 12 photos (San Clemente units, San Diego, SJC). Nothing pushed; Pages not enabled yet.
+
+Open items waiting on Peter:
+- Photos: Drive downloads via the connector were unreliable (slow connection). Peter will download into `raw/photos/`: Longfellow + Vail `Listing Photos`, Calle Delphina `Listing Photos` (Units A/B/C), Linden `Photos/Property` (2026 drone shots).
+- San Diego condo beds/baths (left blank on purpose).
+- 2025 survey: Peter links the 2025 Form responses to a Sheet; then add `2025` to `src/data/survey.json` (only 8 responses; numbers are currently only in chart images).
+- Confirm "You said, we did" items in `src/data/survey.json` (`confirmed: true` + `did`).
+- Formspree + Tally signups, Stessa portal URL, home descriptions, About copy review, design feedback.
+- Then: push, enable Pages (Source: GitHub Actions), review, and run the DNS cutover.
