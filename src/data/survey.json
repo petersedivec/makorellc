@@ -1,0 +1,66 @@
+{
+  "_note": "Portfolio-wide averages only, computed from every response in the yearly Google Forms response sheets. Never add per-property or per-city numbers. 2025 is pending: its responses aren't linked to a sheet yet.",
+  "years": [
+    {
+      "year": 2024,
+      "responses": 14,
+      "recommend": 9.36,
+      "value": 9.14,
+      "rentVsMarket": 2.93,
+      "satisfaction": {
+        "Exterior appearance": 4.64,
+        "Gardening & landscaping": 4.64,
+        "Common areas": 4.43,
+        "Parking": 4.43,
+        "Kitchen": 4.07,
+        "Bathrooms": 3.86,
+        "Appliances": 4.29
+      },
+      "maintenance": {
+        "Taken seriously": 4.71,
+        "Addressed promptly": 4.79,
+        "Kept informed": 5.0,
+        "Resolved to my satisfaction": 4.71
+      }
+    },
+    {
+      "year": 2026,
+      "responses": 10,
+      "recommend": 9.6,
+      "value": 8.9,
+      "rentVsMarket": 2.9,
+      "satisfaction": {
+        "Exterior appearance": 4.3,
+        "Gardening & landscaping": 4.3,
+        "Common areas": 4.0,
+        "Parking": 4.1,
+        "Kitchen": 4.3,
+        "Bathrooms": 4.1,
+        "Appliances": 4.1
+      },
+      "maintenance": {
+        "Taken seriously": 4.6,
+        "Addressed promptly": 4.6,
+        "Kept informed": 4.5,
+        "Resolved to my satisfaction": 4.4
+      }
+    }
+  ],
+  "quotes": [
+    "He's consistently responsive and understanding, and even though he isn't local, it never feels that way. It's clear he genuinely cares about his tenants and his property.",
+    "It's never been a question that if something isn't working that it wouldn't be taken care of immediately.",
+    "Thanks for being such a great landlord. We really appreciate your approach and the space has been a really lovely place to call home.",
+    "Everything has been good. I love that it's always been very easy to communicate.",
+    "You take care of all the issues thoughtfully and thoroughly.",
+    "We love our home so much! We're so thankful for our memories and love growing them."
+  ],
+  "_youSaidWeDid_note": "Draft candidates from survey feedback. Only items with confirmed: true are shown on the site; Peter confirms what was actually done.",
+  "youSaidWeDid": [
+    { "year": 2024, "said": "Bathrooms scored lowest: drains backing up and a peeling tub.", "did": "", "confirmed": false },
+    { "year": 2024, "said": "Requests for updated kitchen appliances (microwave, dishwasher).", "did": "", "confirmed": false },
+    { "year": 2025, "said": "A garage door wasn't rolling smoothly; bathroom vanity and medicine cabinet showing wear.", "did": "", "confirmed": false },
+    { "year": 2026, "said": "Safety: broken common-area walkway lighting and an aging carbon-monoxide alarm.", "did": "", "confirmed": false },
+    { "year": 2026, "said": "More foot traffic in a back alley; a request for security cameras.", "did": "", "confirmed": false },
+    { "year": 2026, "said": "Laundry and appliance issues: a slow dryer, a mildew-prone washer, a sticky stove burner.", "did": "", "confirmed": false }
+  ]
+}

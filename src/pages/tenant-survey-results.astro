@@ -1,16 +1,107 @@
 ---
 import Base from '../layouts/Base.astro';
+import DotPlot from '../components/DotPlot.astro';
+import survey from '../data/survey.json';
+import { url } from '../site.config';
+
+const years = [...survey.years].sort((a, b) => a.year - b.year);
+const latest = years[years.length - 1];
+const first = years[0];
+const avg = (o: Record<string, number>) => Object.values(o).reduce((s, v) => s + v, 0) / Object.values(o).length;
+
+// Ordinal year ramp (one hue, light = oldest → dark = newest), validated with the dataviz checker.
+const ramp = ['#7ab0cb', '#2f86b0', '#0a5174'];
+const colors = Object.fromEntries(years.map((y, i) => [y.year, ramp[ramp.length - years.length + i]]));
+
+const toRows = (key: 'satisfaction' | 'maintenance') =>
+  Object.keys(latest[key]).map((label) => ({
+    label,
+    values: years.map((y) => ({ year: y.year, value: (y[key] as Record<string, number>)[label] })),
+  }));
+
+const tiles = [
+  { label: 'Would recommend us', value: latest.recommend, max: 10, prev: first.recommend },
+  { label: 'Maintenance handled well', value: avg(latest.maintenance), max: 5, prev: avg(first.maintenance) },
+  { label: 'Home & amenities vs. comparable rentals', value: latest.value, max: 10, prev: first.value },
+];
+const ticks = [3, 3.5, 4, 4.5, 5].map((at) => ({ at, label: at === 3 ? '3 · neutral' : at === 5 ? '5 · best' : String(at) }));
+const done = survey.youSaidWeDid.filter((i) => i.confirmed);
 ---
-<Base title="Tenant Survey Results" description="Results of Mako RE's annual tenant satisfaction survey, 2024–2026.">
+<Base title="Tenant Survey Results" description="Results of Mako RE's annual tenant satisfaction survey: scores, trends, and what we changed.">
   <section class="section">
     <div class="container">
       <div class="eyebrow">Annual tenant survey</div>
       <h1>What our tenants say</h1>
       <p class="lede">
-        Every spring since 2024 we've asked every household how we're doing. Here's what they told us —
-        and what we changed because of it.
+        Every spring since 2024 we've asked every household how we're doing. These are the
+        portfolio-wide results — every response counted, nothing filtered.
       </p>
-      <p class="muted">Charts and year-by-year results coming next.</p>
+
+      <div class="tiles">
+        {tiles.map((t) => (
+          <div class="tile card">
+            <div class="tile-value">{t.value.toFixed(1)}<small>/{t.max}</small></div>
+            <div class="tile-label">{t.label}</div>
+            <div class="tile-sub muted">{latest.year} survey · in {first.year}: {t.prev.toFixed(1)}</div>
+          </div>
+        ))}
+        <div class="tile card">
+          <div class="tile-value">{latest.responses}</div>
+          <div class="tile-label">Households responded in {latest.year}</div>
+          <div class="tile-sub muted">{first.year}: {first.responses}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container charts">
+      <DotPlot caption="When I raise an issue, it's…" rows={toRows('maintenance')} min={3} max={5} ticks={ticks} colors={colors} />
+      <DotPlot caption="Satisfaction with the home" rows={toRows('satisfaction')} min={3} max={5} ticks={ticks} colors={colors} />
+      <p class="muted note">
+        Average scores on a 1–5 scale (5 = strongly agree / very satisfied). {years.map((y) => `${y.year}: ${y.responses} responses`).join(' · ')}.
+        2025 results will be added soon. Rent relative to comparable homes averaged
+        {' '}{latest.rentVsMarket.toFixed(1)} on a 1–5 scale where 3 means "at market."
+      </p>
+    </div>
+  </section>
+
+  {done.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">You said, we did</div>
+        <h2>What changed because of your feedback</h2>
+        <ul class="ysd">
+          {done.map((i) => <li class="card card-body"><span class="muted">{i.year} · You said:</span> {i.said}<br /><strong>We did:</strong> {i.did}</li>)}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="container">
+      <div class="eyebrow">In their words</div>
+      <h2>Comments from the survey</h2>
+      <div class="grid grid-3 quotes">
+        {survey.quotes.map((q) => <blockquote class="card card-body">“{q}”</blockquote>)}
+      </div>
+      <p class="muted">Comments are anonymous and lightly trimmed to remove names and locations.</p>
+      <p><a href={url('residents/')}>Current resident? Find this year's survey here →</a></p>
     </div>
   </section>
 </Base>
+
+<style>
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 36px; }
+  .tile { padding: 22px; }
+  .tile-value { font-size: 2.6rem; font-weight: 750; letter-spacing: -0.02em; color: var(--ink); line-height: 1; }
+  .tile-value small { font-size: 1.05rem; color: var(--ink-3); font-weight: 600; }
+  .tile-label { margin-top: 10px; font-weight: 600; }
+  .tile-sub { font-size: 0.85rem; margin-top: 4px; }
+  .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .note { grid-column: 1 / -1; font-size: 0.88rem; margin: 0; }
+  .ysd { list-style: none; padding: 0; display: grid; gap: 14px; margin-top: 20px; }
+  .quotes { margin: 24px 0 16px; }
+  blockquote { margin: 0; color: var(--ink-2); }
+  @media (max-width: 960px) { .charts { grid-template-columns: 1fr; } }
+</style>
