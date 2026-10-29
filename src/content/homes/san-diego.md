@@ -5,6 +5,8 @@ state: "CA"
 market: "socal"
 type: "Condominium"
 order: 4
+beds: 2
+baths: 1
 hero: "../../assets/homes/san-diego/hero.jpg"
 gallery:
   - "../../assets/homes/san-diego/kitchen.jpg"

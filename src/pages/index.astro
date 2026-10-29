@@ -16,13 +16,16 @@ const quotes = [
     <div class="container hero-inner">
       <div>
         <div class="eyebrow">Owner-operated since 2007</div>
-        <h1>Well-kept rental homes in Southern&nbsp;California &amp; Central&nbsp;Oregon</h1>
+        <h1>Well-kept rentals in Southern&nbsp;California &amp; Central&nbsp;Oregon</h1>
+        <p class="motto">
+          “We've lived in every property we've owned and care for each property as if it were our home.”
+        </p>
         <p class="lede">
           {SITE.brand} is a small, hands-on landlord. We own every home we rent, answer our own phone,
           and fix things fast — and we ask our tenants every year how we're doing.
         </p>
         <div class="btn-row">
-          <a class="btn btn-primary" href={url('homes/')}>See our homes</a>
+          <a class="btn btn-primary" href={url('homes/')}>See our properties</a>
           <a class="btn btn-ghost" href={url('contact/')}>Ask about availability</a>
         </div>
       </div>
@@ -39,10 +42,10 @@ const quotes = [
     <div class="container">
       <div class="head">
         <div>
-          <div class="eyebrow">Our homes</div>
-          <h2>Homes across two markets</h2>
+          <div class="eyebrow">Our properties</div>
+          <h2>Properties across two markets</h2>
         </div>
-        <a href={url('homes/')}>View all homes →</a>
+        <a href={url('homes/')}>View all properties →</a>
       </div>
       <div class="grid grid-3">
         {homes.slice(0, 3).map((home) => <HomeCard home={home} />)}
@@ -65,6 +68,7 @@ const quotes = [
 <style>
   .hero { padding: 72px 0 64px; }
   .hero-inner { display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 56px; align-items: center; }
+  .motto { font-size: 1.15rem; font-style: italic; color: var(--accent); margin: 0 0 16px; }
   .proof { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); margin: 0; }
   .proof div { background: #fff; padding: 22px 22px 20px; }
   .proof dt { font-size: 2.1rem; font-weight: 750; letter-spacing: -0.02em; color: var(--accent); line-height: 1.1; }

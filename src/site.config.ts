@@ -3,7 +3,7 @@
 
 export const SITE = {
   brand: 'Mako RE',
-  tagline: 'Well-kept rental homes in Southern California & Central Oregon',
+  tagline: 'Well-kept rentals in Southern California & Central Oregon',
   owner: 'Peter Sedivec',
   // No LLC is formed: never write "LLC" in visible text (the domain name is fine).
   legalLine: 'Peter Sedivec, doing business as Mako RE',
@@ -20,7 +20,7 @@ export const SITE = {
   surveyYear: 2027,
 
   nav: [
-    { label: 'Our Homes', href: 'homes/' },
+    { label: 'Our Properties', href: 'homes/' },
     { label: 'Tenant Survey', href: 'tenant-survey-results/' },
     { label: 'Residents', href: 'residents/' },
     { label: 'About', href: 'about/' },

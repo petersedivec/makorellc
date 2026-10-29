@@ -31,7 +31,6 @@ Done: skeleton, all pages, survey results (2024 + 2026 from full response CSVs),
 
 Open items waiting on Peter:
 - Photos: Drive downloads via the connector were unreliable (slow connection). Peter will download into `raw/photos/`: Longfellow + Vail `Listing Photos`, Calle Delphina `Listing Photos` (Units A/B/C), Linden `Photos/Property` (2026 drone shots).
-- San Diego condo beds/baths (left blank on purpose).
 - 2025 survey: Peter links the 2025 Form responses to a Sheet; then add `2025` to `src/data/survey.json` (only 8 responses; numbers are currently only in chart images).
 - Confirm "You said, we did" items in `src/data/survey.json` (`confirmed: true` + `did`).
 - Formspree + Tally signups, Stessa portal URL, home descriptions, About copy review, design feedback.

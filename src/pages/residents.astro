@@ -17,8 +17,12 @@ import { SITE, url } from '../site.config';
         </div>
         <div class="card card-body">
           <h3>Urgent issue?</h3>
-          <p class="muted">For anything urgent — water leaks, no heat, safety concerns — call or text right away.</p>
-          <a class="btn btn-ghost" href={SITE.phoneHref}>{SITE.phone}</a>
+          <p class="muted">
+            For anything urgent — water leaks, no heat, safety concerns — email us right away. Email reaches
+            us just as fast as a call or text, and it keeps everything in writing. For fire, gas leaks, or
+            anyone in danger, call 911 first.
+          </p>
+          <a class="btn btn-ghost" href={`mailto:${SITE.email}?subject=URGENT: `}>Email {SITE.email}</a>
         </div>
         <div class="card card-body">
           <h3>Renter's insurance</h3>
