@@ -9,6 +9,8 @@ beds: 2
 baths: 1
 hero: "../../assets/homes/san-diego/hero.jpg"
 gallery:
+  - "../../assets/homes/san-diego/building.jpg"
+  - "../../assets/homes/san-diego/courtyard.jpg"
   - "../../assets/homes/san-diego/kitchen.jpg"
   - "../../assets/homes/san-diego/bedroom.jpg"
 ---

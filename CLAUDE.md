@@ -24,14 +24,17 @@ DNS is at GoDaddy. Google Workspace email uses the domain's **MX/TXT records: ne
 - **Add or edit a home:** `src/content/homes/<slug>.md`; frontmatter per the schema. Multi-family homes list `units[]`, each with a few headline `photos`.
 - Source photos come from Peter's Google Drive: root folders `NN. <street>` (acquisition order) → `Listing Photos/`.
 - Survey data: past results are in Drive (`Tenant Satisfaction Survey - YYYY (Responses)` sheets, `YYYY Tenant Survey Feedback/Results` docs) and Sent mail ("Tenant Survey"). Future surveys run on Tally (`SITE.tallyFormId`), embedded at `/survey/` (noindex, excluded from the sitemap).
-- External IDs pending Peter's signups: `formspreeId`, `tallyFormId`, `stessaUrl` in `src/site.config.ts`. The components fall back to email/phone until set.
+- Peter's local photo drop is `raw/<street>/<unit or area>/`, with his pick for each named `Hero.*`. Street→slug: Linden=long-beach, Escalones=san-clemente, Calle Delphina=san-juan-capistrano, Robinson=san-diego, Longfellow=bend-home, Vail=bend-townhome.
+- **Blur house numbers and license plates** on exterior shots (Gaussian blur over the region) and check at full size before committing. Skip photos showing tenants' belongings, kids' names, or family photos.
+- External IDs pending Peter's signups: `formspreeId`, `tallyFormId` in `src/site.config.ts`. The components fall back to email/phone until set. `stessaUrl` is the generic `https://www.stessa.com` login.
+- Contact info (email/phone) appears on the Contact and Residents pages, not in the footer (Peter's call).
 
-## Status (end of 2026-10-27)
-Done: skeleton, all pages, survey results (2024 + 2026 from full response CSVs), unit lists, 12 photos (San Clemente units, San Diego, SJC). Nothing pushed; Pages not enabled yet.
+## Status (end of 2026-10-29)
+Done: skeleton, all pages, survey results (2024 + 2026 from full response CSVs), unit lists, photos for all 6 properties (Peter's Hero picks plus a few headline shots per unit; house numbers/plates blurred). Contact page split into renting / investment deals. Nothing pushed; Pages not enabled yet.
 
 Open items waiting on Peter:
-- Photos: Drive downloads via the connector were unreliable (slow connection). Peter will download into `raw/photos/`: Longfellow + Vail `Listing Photos`, Calle Delphina `Listing Photos` (Units A/B/C), Linden `Photos/Property` (2026 drone shots).
+- San Clemente Unit 1 still uses the earlier Drive photos (no Unit 1 folder in `raw/`).
 - 2025 survey: Peter links the 2025 Form responses to a Sheet; then add `2025` to `src/data/survey.json` (only 8 responses; numbers are currently only in chart images).
 - Confirm "You said, we did" items in `src/data/survey.json` (`confirmed: true` + `did`).
-- Formspree + Tally signups, Stessa portal URL, home descriptions, About copy review, design feedback.
+- Formspree + Tally signups, home descriptions, About copy review, design feedback.
 - Then: push, enable Pages (Source: GitHub Actions), review, and run the DNS cutover.

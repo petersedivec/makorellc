@@ -8,27 +8,36 @@ const homes = (await getCollection('homes'))
   .sort((a, b) => a.data.order - b.data.order)
   .map((h) => ({ id: h.id, label: `${h.data.title} · ${h.data.city}, ${h.data.state}`, market: h.data.market }));
 ---
-<Base title="Contact" description="Ask Mako RE about rental availability in Southern California and Bend, Oregon.">
+<Base title="Contact" description="Ask Mako RE about rental availability, or send us an investment property deal.">
   <section class="section">
-    <div class="container contact">
-      <div>
-        <div class="eyebrow">Contact</div>
-        <h1>Interested in renting with us?</h1>
-        <p class="lede">
-          Tell us a little about what you're looking for. Even if nothing's open right now, we'll keep
-          you in mind — our homes often re-lease to people who reached out early.
-        </p>
-        <p>
-          <a href={`mailto:${SITE.email}`}>{SITE.email}</a><br />
-          <a href={SITE.phoneHref}>{SITE.phone}</a>
-        </p>
+    <div class="container">
+      <div class="eyebrow">Contact</div>
+      <h1>Get in touch</h1>
+      <div class="cards">
+        <div class="card card-body">
+          <h2>Interested in renting from us?</h2>
+          <p class="muted">
+            Tell us a little about what you're looking for. Even if nothing's open right now, we'll keep
+            you in mind — our homes often re-lease to people who reached out early.
+          </p>
+          <InquiryForm homes={homes} />
+        </div>
+        <div class="card card-body">
+          <h2>Have an investment property deal?</h2>
+          <p class="muted">
+            Owners, agents, and wholesalers: if you have a property in Southern California or Central
+            Oregon you think could fit, send us the details — location, asking price, unit mix, and
+            current rents.
+          </p>
+          <a class="btn btn-ghost" href={`mailto:${SITE.email}?subject=Investment property deal`}>Email us the details</a>
+        </div>
       </div>
-      <InquiryForm homes={homes} />
     </div>
   </section>
 </Base>
 
 <style>
-  .contact { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: start; }
-  @media (max-width: 900px) { .contact { grid-template-columns: 1fr; gap: 28px; } }
+  .cards { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: start; margin-top: 28px; }
+  .cards h2 { margin-top: 0; font-size: 1.35rem; }
+  @media (max-width: 900px) { .cards { grid-template-columns: 1fr; } }
 </style>
