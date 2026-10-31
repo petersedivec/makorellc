@@ -28,7 +28,7 @@ units:
   - name: "Unit 3 (upstairs)"
     beds: 2
     baths: 1
-    description: "An upstairs unit with lots of windows and second-floor privacy. The kitchen has updated flooring, a new countertop, refinished cabinets, a built-in microwave and a stove with digital controls. The bathroom was retiled, with a new vanity, medicine cabinet, shelving, fixtures and floor."
+    description: "An upstairs unit with lots of windows and second-floor privacy. The kitchen has updated flooring, a new countertop, refinished cabinets, a built-in microwave and a stove with digital controls. The bathroom was retiled, with a new vanity, medicine cabinet, shelving, fixtures and floor. The unit includes a private off-street parking spot, plus a tandem spot."
     photos:
       - "../../assets/homes/long-beach/unit3-kitchen.jpg"
       - "../../assets/homes/long-beach/unit3-living.jpg"
@@ -36,7 +36,7 @@ units:
   - name: "Unit 4 (upstairs)"
     beds: 2
     baths: 1
-    description: "A rear, upstairs unit with summer breezes and second-floor privacy. It was gutted and remodeled, with all-new electrical, recessed lighting in the living room and laminate flooring throughout. The kitchen has extras that are rare in the neighborhood: a dishwasher, over-the-range microwave, refrigerator with ice maker, large pantry, and granite counters with an undermount sink."
+    description: "A rear, upstairs unit with summer breezes and second-floor privacy. It was gutted and remodeled, with all-new electrical, recessed lighting in the living room and laminate flooring throughout. The kitchen has extras that are rare in the neighborhood: a dishwasher, over-the-range microwave, refrigerator with ice maker, large pantry, and granite counters with an undermount sink. The unit includes a private parking spot and a 20' × 18' two-car garage."
     photos:
       - "../../assets/homes/long-beach/unit4-kitchen.jpg"
       - "../../assets/homes/long-beach/unit4-living.jpg"

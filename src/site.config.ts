@@ -21,8 +21,8 @@ export const SITE = {
 
   nav: [
     { label: 'Our Properties', href: 'homes/' },
-    { label: 'Tenant Survey', href: 'tenant-survey-results/' },
     { label: 'Residents', href: 'residents/' },
+    { label: 'Tenant Survey', href: 'tenant-survey-results/' },
     { label: 'About', href: 'about/' },
     { label: 'Contact', href: 'contact/' },
   ],
