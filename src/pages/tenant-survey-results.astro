@@ -61,7 +61,7 @@ const done = survey.youSaidWeDid.filter((i) => i.confirmed);
       <DotPlot caption="Satisfaction with the home" rows={toRows('satisfaction')} min={3} max={5} ticks={ticks} colors={colors} />
       <p class="muted note">
         Average scores on a 1–5 scale (5 = strongly agree / very satisfied). {years.map((y) => `${y.year}: ${y.responses} responses`).join(' · ')}.
-        2025 results will be added soon. Rent relative to comparable homes averaged
+        Rent relative to comparable homes averaged
         {' '}{latest.rentVsMarket.toFixed(1)} on a 1–5 scale where 3 means "at market."
       </p>
     </div>

@@ -1,5 +1,5 @@
 {
-  "_note": "Portfolio-wide averages only, computed from every response in the yearly Google Forms response sheets. Never add per-property or per-city numbers. 2025 is pending: its responses aren't linked to a sheet yet.",
+  "_note": "Portfolio-wide averages only, computed from every response in the yearly Google Forms response sheets. Never add per-property or per-city numbers.",
   "years": [
     {
       "year": 2024,
@@ -21,6 +21,28 @@
         "Addressed promptly": 4.79,
         "Kept informed": 5.0,
         "Resolved to my satisfaction": 4.71
+      }
+    },
+    {
+      "year": 2025,
+      "responses": 9,
+      "recommend": 10.0,
+      "value": 9.67,
+      "rentVsMarket": 3.22,
+      "satisfaction": {
+        "Exterior appearance": 4.67,
+        "Gardening & landscaping": 4.44,
+        "Common areas": 4.56,
+        "Parking": 4.56,
+        "Kitchen": 4.56,
+        "Bathrooms": 4.11,
+        "Appliances": 4.56
+      },
+      "maintenance": {
+        "Taken seriously": 5.0,
+        "Addressed promptly": 4.89,
+        "Kept informed": 5.0,
+        "Resolved to my satisfaction": 5.0
       }
     },
     {
