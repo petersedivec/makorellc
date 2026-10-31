@@ -2,11 +2,11 @@
 // Change values here — never hard-code them into pages.
 
 export const SITE = {
-  brand: 'Mako RE',
+  brand: 'Mako Real Estate',
   tagline: 'Well-kept rentals in Southern California & Central Oregon',
   owner: 'Peter Sedivec',
   // No LLC is formed: never write "LLC" in visible text (the domain name is fine).
-  legalLine: 'Peter Sedivec, doing business as Mako RE',
+  legalLine: 'Peter Sedivec, doing business as Mako Real Estate',
   dre: '01908921',
   email: 'peter@makorellc.com',
   phone: '(310) 462-1343',

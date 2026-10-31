@@ -8,7 +8,7 @@ const homes = (await getCollection('homes'))
   .sort((a, b) => a.data.order - b.data.order)
   .map((h) => ({ id: h.id, label: `${h.data.title} · ${h.data.city}, ${h.data.state}`, market: h.data.market }));
 ---
-<Base title="Contact" description="Ask Mako RE about rental availability, or send us an investment property deal.">
+<Base title="Contact" description="Ask Mako Real Estate about rental availability, or send us an investment property deal.">
   <section class="section">
     <div class="container">
       <div class="eyebrow">Contact</div>

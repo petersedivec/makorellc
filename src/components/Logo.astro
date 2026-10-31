@@ -1,17 +1,21 @@
 ---
 // Wordmark: a stylized mako dorsal fin over a waterline, plus the brand name.
 import { SITE } from '../site.config';
+const [first, ...rest] = SITE.brand.split(' ');
 ---
 <span class="logo">
   <svg viewBox="0 0 40 32" width="34" height="27" aria-hidden="true">
     <path d="M6 24 C 14 22, 19 12, 21 3 C 24 11, 28 19, 34 24 Z" fill="var(--accent)" />
     <path d="M2 27 c 4 -2.5 8 -2.5 12 0 s 8 2.5 12 0 s 8 -2.5 12 0" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" />
   </svg>
-  <span class="word">{SITE.brand.split(' ')[0]}<span class="re">{SITE.brand.split(' ')[1]}</span></span>
+  <span class="word">{first}<span class="re">{rest.join(' ')}</span></span>
 </span>
 
 <style>
   .logo { display: inline-flex; align-items: center; gap: 10px; }
   .word { font-weight: 800; font-size: 1.3rem; letter-spacing: 0.04em; color: var(--ink); text-transform: uppercase; }
   .re { color: var(--accent); margin-left: 0.3em; }
+  @media (max-width: 480px) {
+    .word { font-size: 1.05rem; letter-spacing: 0.02em; }
+  }
 </style>

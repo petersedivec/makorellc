@@ -16,7 +16,7 @@ const { Content } = await render(home);
 const photos = [d.hero, ...d.gallery].filter((p) => p !== undefined);
 const inquire = url(`contact/?home=${home.id}`);
 ---
-<Base title={`${d.title} · ${d.city}`} description={`${d.type} in ${d.city}, ${d.state}, owned and managed by Mako RE.`}>
+<Base title={`${d.title} · ${d.city}`} description={`${d.type} in ${d.city}, ${d.state}, owned and managed by Mako Real Estate.`}>
   <section class="section">
     <div class="container">
       <a href={url('homes/')} class="back">← All properties</a>

@@ -1,6 +1,6 @@
 # makorellc
 
-Website for **Mako RE**: rental homes in Southern California & Central Oregon.
+Website for **Mako Real Estate**: rental homes in Southern California & Central Oregon.
 Built with [Astro](https://astro.build) and deployed to GitHub Pages on every push to `main`.
 
 ```sh

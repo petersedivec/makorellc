@@ -1,6 +1,6 @@
-# Mako RE: makorellc.com
+# Mako Real Estate: makorellc.com
 
-Marketing site for **Mako RE**, Peter Sedivec's owner-operated rental business: 6 homes in SoCal (Long Beach, San Clemente, San Juan Capistrano, San Diego) and Bend, OR. Astro static site, deployed to GitHub Pages by `.github/workflows/deploy.yml` on every push to `main`.
+Marketing site for **Mako Real Estate**, Peter Sedivec's owner-operated rental business: 6 homes in SoCal (Long Beach, San Clemente, San Juan Capistrano, San Diego) and Bend, OR. Astro static site, deployed to GitHub Pages by `.github/workflows/deploy.yml` on every push to `main`.
 
 ## Commands
 - `npm run dev`: dev server (see AGENTS.md: `astro dev --background` / `astro dev stop`)
@@ -8,7 +8,7 @@ Marketing site for **Mako RE**, Peter Sedivec's owner-operated rental business: 
 - `npm run preview`: serves `dist/` at `http://localhost:4321/makorellc/`
 
 ## Hard rules
-- **Never write "LLC" in visible text.** No LLC is formed; Peter is a sole proprietor doing business as "Mako RE". The domain `makorellc.com` is fine. Brand, legal line, DRE number and contact info live in `src/site.config.ts`. Never hard-code them in pages.
+- **Never write "LLC" in visible text.** No LLC is formed; Peter is a sole proprietor doing business as "Mako Real Estate". The domain `makorellc.com` is fine. Brand, legal line, DRE number and contact info live in `src/site.config.ts`. Never hard-code them in pages.
 - **No street addresses anywhere.** Homes show city + type + beds/baths only. The `homes` schema (`src/content.config.ts`) deliberately has no address field. Slugs must not contain street names.
 - **Survey privacy:** the public results page shows only portfolio-wide aggregates. Never show per-property or per-city breakdowns (several cities have a single respondent), property-specific issues or action items, or anything that identifies a tenant. Quotes are unattributed, with tenant names removed.
 - **Strip photo metadata before committing.** Source images in `src/assets/` are public in this repo. Re-save with PIL so no EXIF/GPS survives (verify with `Image.open(p).getexif()` being empty). Raw downloads go in `raw/` (gitignored).
