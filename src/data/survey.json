@@ -83,6 +83,9 @@
     { "year": 2025, "said": "A garage door wasn't rolling smoothly; bathroom vanity and medicine cabinet showing wear.", "did": "", "confirmed": false },
     { "year": 2026, "said": "Safety: broken common-area walkway lighting and an aging carbon-monoxide alarm.", "did": "", "confirmed": false },
     { "year": 2026, "said": "More foot traffic in a back alley; a request for security cameras.", "did": "", "confirmed": false },
-    { "year": 2026, "said": "Laundry and appliance issues: a slow dryer, a mildew-prone washer, a sticky stove burner.", "did": "", "confirmed": false }
+    { "year": 2025, "said": "A request for a kitchen refresh.", "did": "Refreshed the kitchen.", "confirmed": true },
+    { "year": 2025, "said": "A request for central air conditioning.", "did": "Installed central air.", "confirmed": true },
+    { "year": 2026, "said": "Laundry machines were wearing out: a slow dryer and a mildew-prone washer.", "did": "Replaced the washer and dryer with new machines.", "confirmed": true },
+    { "year": 2026, "said": "A sticky stove burner.", "did": "", "confirmed": false }
   ]
 }
