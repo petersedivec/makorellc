@@ -80,14 +80,14 @@ p { margin: 0 0 1em; }
 .badge-available { background: var(--ok-soft); color: var(--ok); border-color: transparent; }
 
 /* Forms */
-.form { display: grid; gap: 16px; }
+.form { display: grid; gap: 16px; align-content: start; }
 .form label { display: grid; gap: 6px; font-size: 0.92rem; font-weight: 600; }
 .form input, .form select, .form textarea {
-  font: inherit; font-weight: 400; padding: 11px 14px; border-radius: 10px;
+  font: inherit; font-weight: 400; padding: 11px 14px; border-radius: 10px; width: 100%; min-width: 0;
   border: 1px solid var(--line); background: #fff; color: var(--ink);
 }
 .form textarea { min-height: 130px; resize: vertical; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 
 @media (max-width: 720px) {
   .section { padding: 52px 0; }

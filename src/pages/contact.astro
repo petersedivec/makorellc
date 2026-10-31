@@ -37,7 +37,12 @@ const homes = (await getCollection('homes'))
 </Base>
 
 <style>
-  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; margin-top: 28px; }
+  /* Equal columns; each card spans the same three rows (heading, intro, form) so the forms line up. */
+  .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; margin-top: 28px; }
+  .cards > .card { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
   .cards h2 { margin-top: 0; font-size: 1.35rem; }
-  @media (max-width: 900px) { .cards { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) {
+    .cards { grid-template-columns: minmax(0, 1fr); row-gap: 24px; }
+    .cards > .card { display: block; grid-row: auto; }
+  }
 </style>
