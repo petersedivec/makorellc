@@ -17,7 +17,7 @@ export const SITE = {
   stessaUrl: 'https://www.stessa.com', // tenant portal login link
   // Formspree form IDs (https://formspree.io/f/<id>); both deliver to SITE.email.
   formspree: { rental: 'maeepeqo', deals: 'xzeejedj' },
-  gaId: '', // Google Analytics 4 Measurement ID, e.g. 'G-XXXXXXXXXX'; empty = no analytics
+  gaId: 'G-S2MV8NNB7S', // Google Analytics 4 Measurement ID, e.g. 'G-XXXXXXXXXX'; empty = no analytics
   tallyFormId: '', // e.g. 'w4Zk9P' from https://tally.so/r/w4Zk9P
   surveyYear: 2027,
 
