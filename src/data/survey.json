@@ -21,7 +21,12 @@
         "Addressed promptly": 4.79,
         "Kept informed": 5.0,
         "Resolved to my satisfaction": 4.71
-      }
+      },
+      "quotes": [
+        "Thanks for being such a great landlord. We really appreciate your approach and the space has been a really lovely place to call home.",
+        "Upkeep has been great, whether it's routine maintenance or unexpected repairs. The care shows in the effort to make it a safe, functional and inviting place to live.",
+        "Thanks for all that you do!"
+      ]
     },
     {
       "year": 2025,
@@ -43,7 +48,12 @@
         "Addressed promptly": 4.89,
         "Kept informed": 5.0,
         "Resolved to my satisfaction": 5.0
-      }
+      },
+      "quotes": [
+        "We are happy and satisfied with our unit and property.",
+        "Thanks for everything that you do!",
+        "Nothing to add, everything is good."
+      ]
     },
     {
       "year": 2026,
@@ -65,7 +75,12 @@
         "Addressed promptly": 4.6,
         "Kept informed": 4.5,
         "Resolved to my satisfaction": 4.4
-      }
+      },
+      "quotes": [
+        "It's never been a question that if something isn't working that it wouldn't be taken care of immediately.",
+        "If there are any issues, response time is prompt and issues are addressed in a timely manner.",
+        "He's consistently responsive and understanding, and even though he isn't local, it never feels that way."
+      ]
     }
   ],
   "quotes": [
@@ -78,14 +93,60 @@
   ],
   "_youSaidWeDid_note": "Draft candidates from survey feedback. Only items with confirmed: true are shown on the site; Peter confirms what was actually done.",
   "youSaidWeDid": [
-    { "year": 2024, "said": "Bathrooms scored lowest: drains backing up and a peeling tub.", "did": "", "confirmed": false },
-    { "year": 2024, "said": "Requests for updated kitchen appliances (microwave, dishwasher).", "did": "", "confirmed": false },
-    { "year": 2025, "said": "A garage door wasn't rolling smoothly; bathroom vanity and medicine cabinet showing wear.", "did": "", "confirmed": false },
-    { "year": 2026, "said": "Safety: broken common-area walkway lighting and an aging carbon-monoxide alarm.", "did": "", "confirmed": false },
-    { "year": 2026, "said": "More foot traffic in a back alley; a request for security cameras.", "did": "", "confirmed": false },
-    { "year": 2025, "said": "A request for a kitchen refresh.", "did": "Refreshed the kitchen.", "confirmed": true },
-    { "year": 2025, "said": "A request for central air conditioning.", "did": "Installed central air.", "confirmed": true },
-    { "year": 2026, "said": "Laundry machines were wearing out: a slow dryer and a mildew-prone washer.", "did": "Replaced the washer and dryer with new machines.", "confirmed": true },
-    { "year": 2026, "said": "A sticky stove burner.", "did": "", "confirmed": false }
-  ]
+    {
+      "year": 2024,
+      "said": "Bathrooms scored lowest: drains backing up and a peeling tub.",
+      "did": "",
+      "confirmed": false
+    },
+    {
+      "year": 2024,
+      "said": "Requests for updated kitchen appliances (microwave, dishwasher).",
+      "did": "",
+      "confirmed": false
+    },
+    {
+      "year": 2025,
+      "said": "A garage door wasn't rolling smoothly; bathroom vanity and medicine cabinet showing wear.",
+      "did": "",
+      "confirmed": false
+    },
+    {
+      "year": 2026,
+      "said": "Safety: broken common-area walkway lighting and an aging carbon-monoxide alarm.",
+      "did": "",
+      "confirmed": false
+    },
+    {
+      "year": 2026,
+      "said": "More foot traffic in a back alley; a request for security cameras.",
+      "did": "",
+      "confirmed": false
+    },
+    {
+      "year": 2025,
+      "said": "A request for a kitchen refresh.",
+      "did": "Refreshed the kitchen.",
+      "confirmed": true
+    },
+    {
+      "year": 2025,
+      "said": "A request for central air conditioning.",
+      "did": "Installed central air.",
+      "confirmed": true
+    },
+    {
+      "year": 2026,
+      "said": "Laundry machines were wearing out: a slow dryer and a mildew-prone washer.",
+      "did": "Replaced the washer and dryer with new machines.",
+      "confirmed": true
+    },
+    {
+      "year": 2026,
+      "said": "A sticky stove burner.",
+      "did": "",
+      "confirmed": false
+    }
+  ],
+  "_quotes_note": "Top-level quotes appear on the page; years[].quotes appear in that year's PDF report (scripts/survey-reports.py). Unattributed, with names and locations removed."
 }

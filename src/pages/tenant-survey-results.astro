@@ -37,6 +37,10 @@ const done = survey.youSaidWeDid.filter((i) => i.confirmed);
         portfolio-wide results — every response counted, nothing filtered. We take feedback seriously and strive to
         continue to upgrade and enhance each property.
       </p>
+      <p class="reports">
+        Yearly reports (PDF):{' '}
+        {years.map((y, i) => <>{i > 0 && ' · '}<a href={url(`surveys/tenant-survey-${y.year}.pdf`)}>{y.year}</a></>)}
+      </p>
 
       <div class="tiles">
         {tiles.map((t) => (
@@ -103,6 +107,7 @@ const done = survey.youSaidWeDid.filter((i) => i.confirmed);
   .note { grid-column: 1 / -1; font-size: 0.88rem; margin: 0; }
   .ysd { list-style: none; padding: 0; display: grid; gap: 14px; margin-top: 20px; }
   .quotes { margin: 24px 0 16px; }
+  .reports { margin-top: 12px; font-weight: 600; }
   blockquote { margin: 0; color: var(--ink-2); }
   @media (max-width: 960px) { .charts { grid-template-columns: 1fr; } }
 </style>
