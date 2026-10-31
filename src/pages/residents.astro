@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { SITE, url } from '../site.config';
+import { SITE } from '../site.config';
 ---
 <Base title="Current Residents" description="Pay rent, request maintenance, and find resident resources for Mako Real Estate homes.">
   <section class="section">
@@ -22,17 +22,12 @@ import { SITE, url } from '../site.config';
             us just as fast as a call or text, and it keeps everything in writing. For fire, gas leaks, or
             anyone in danger, call 911 first.
           </p>
-          <a class="btn btn-ghost" href={`mailto:${SITE.email}?subject=URGENT: `}>Email {SITE.email}</a>
+          <a class="btn btn-primary" href={`mailto:${SITE.email}?subject=URGENT: `}>Email us</a>
         </div>
         <div class="card card-body">
           <h3>Renter's insurance</h3>
           <p class="muted">Every lease requires renter's insurance. Email your policy's declaration page each year when it renews.</p>
-          <a class="btn btn-ghost" href={`mailto:${SITE.email}?subject=Renter's insurance declaration page`}>Email declaration page</a>
-        </div>
-        <div class="card card-body">
-          <h3>Annual tenant survey</h3>
-          <p class="muted">Each spring we ask every household how we're doing — and publish what we learned.</p>
-          <a class="btn btn-ghost" href={url('survey/')}>Take the {SITE.surveyYear} survey</a>
+          <a class="btn btn-primary" href={`mailto:${SITE.email}?subject=Renter's insurance declaration page`}>Email declaration page</a>
         </div>
       </div>
     </div>

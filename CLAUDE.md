@@ -27,7 +27,7 @@ DNS is at GoDaddy. Google Workspace email uses the domain's **MX/TXT records: ne
 - Peter's local photo drop is `raw/<street>/<unit or area>/`, with his pick for each named `Hero.*`. Street→slug: Linden=long-beach, Escalones=san-clemente, Calle Delphina=san-juan-capistrano, Robinson=san-diego, Longfellow=bend-home, Vail=bend-townhome.
 - **Blur house numbers and license plates** on exterior shots (Gaussian blur over the region) and check at full size before committing. Skip photos showing tenants' belongings, kids' names, or family photos.
 - Formspree forms (`formspree.rental`, `formspree.deals`) are live. External ID still pending: `tallyFormId` in `src/site.config.ts`. The survey embed falls back to email until it is set. `stessaUrl` is the generic `https://www.stessa.com` login.
-- Contact info (email/phone) appears on the Contact and Residents pages, not in the footer (Peter's call).
+- No visible email or phone on the site (Peter's call): the Contact page uses the Formspree forms (email/phone show only as their fallback) and the Residents page uses mailto buttons that do not show the address. The survey is linked from the survey results page, not from Residents.
 - **Descriptions:** came from the Drive doc "Property Listing Descriptions — Final"; the site has since moved ahead of it (Long Beach Units 3/4 parking, San Clemente Unit 1 bathroom year 2026), so the `.md` files are now the source of truth. Property text is the home's Markdown body; unit text is `units[].description`. Keep out move-in dates, deposits, fee amounts and tenant details; avoid wording that signals a preference about children/familial status (fair housing).
 
 ## Status (end of 2026-10-31)
