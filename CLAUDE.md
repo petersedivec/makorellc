@@ -26,7 +26,7 @@ DNS is at GoDaddy. Google Workspace email uses the domain's **MX/TXT records: ne
 - Survey data: past results are in Drive (`Tenant Satisfaction Survey - YYYY (Responses)` sheets, `YYYY Tenant Survey Feedback/Results` docs) and Sent mail ("Tenant Survey"). The yearly PDF reports in `public/surveys/` are generated from `survey.json` by `python scripts/survey-reports.py` (headless Edge/Chrome): rerun it after changing survey data or confirming "You said, we did" items. Never publish the PDFs Peter sent tenants (`raw/survey/`): they contain per-city counts and property-specific issues. Future surveys run on Tally (`SITE.tallyFormId`), embedded at `/survey/` (noindex, excluded from the sitemap).
 - Peter's local photo drop is `raw/<street>/<unit or area>/`, with his pick for each named `Hero.*`. Street→slug: Linden=long-beach, Escalones=san-clemente, Calle Delphina=san-juan-capistrano, Robinson=san-diego, Longfellow=bend-home, Vail=bend-townhome.
 - **Blur house numbers and license plates** on exterior shots (Gaussian blur over the region) and check at full size before committing. Skip photos showing tenants' belongings, kids' names, or family photos.
-- Formspree forms (`formspree.rental`, `formspree.deals`) are live. External ID still pending: `tallyFormId` in `src/site.config.ts`. The survey embed falls back to email until it is set. `stessaUrl` is the generic `https://www.stessa.com` login.
+- Formspree forms (`formspree.rental`, `formspree.deals`) are live. External IDs still pending: `tallyFormId` and `gaId` (Google Analytics 4; loads only in production builds, skipped on noindex pages) in `src/site.config.ts`. The survey embed falls back to email until it is set. `stessaUrl` is the generic `https://www.stessa.com` login.
 - No visible email or phone on the site (Peter's call): the Contact page uses the Formspree forms (email/phone show only as their fallback) and the Residents page uses mailto buttons that do not show the address. The survey is linked from the survey results page, not from Residents.
 - **Descriptions:** came from the Drive doc "Property Listing Descriptions — Final"; the site has since moved ahead of it (Long Beach Units 3/4 parking, San Clemente Unit 1 bathroom year 2026), so the `.md` files are now the source of truth. Property text is the home's Markdown body; unit text is `units[].description`. Keep out move-in dates, deposits, fee amounts and tenant details; avoid wording that signals a preference about children/familial status (fair housing).
 
@@ -36,5 +36,5 @@ Done: skeleton, all pages, survey results (2024 + 2026 from full response CSVs),
 Open items waiting on Peter:
 - San Clemente Unit 1 still uses the earlier Drive photos (no Unit 1 folder in `raw/`).
 - Confirm "You said, we did" items in `src/data/survey.json` (`confirmed: true` + `did`).
-- Tally signup, About copy review, design feedback.
+- Tally signup, GA4 Measurement ID, About copy review, design feedback.
 - Then: push, enable Pages (Source: GitHub Actions), review, and run the DNS cutover.
