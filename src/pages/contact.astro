@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import InquiryForm from '../components/InquiryForm.astro';
-import { SITE } from '../site.config';
+import DealForm from '../components/DealForm.astro';
 
 const homes = (await getCollection('homes'))
   .sort((a, b) => a.data.order - b.data.order)
@@ -29,7 +29,7 @@ const homes = (await getCollection('homes'))
             Oregon you think could fit, send us the details — location, asking price, unit mix, and
             current rents.
           </p>
-          <a class="btn btn-ghost" href={`mailto:${SITE.email}?subject=Investment property deal`}>Email us the details</a>
+          <DealForm />
         </div>
       </div>
     </div>
@@ -37,7 +37,7 @@ const homes = (await getCollection('homes'))
 </Base>
 
 <style>
-  .cards { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: start; margin-top: 28px; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; margin-top: 28px; }
   .cards h2 { margin-top: 0; font-size: 1.35rem; }
   @media (max-width: 900px) { .cards { grid-template-columns: 1fr; } }
 </style>

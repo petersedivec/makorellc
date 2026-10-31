@@ -15,7 +15,8 @@ export const SITE = {
 
   // Third-party services — empty until Peter creates the accounts.
   stessaUrl: 'https://www.stessa.com', // tenant portal login link
-  formspreeId: '', // e.g. 'xyzabcd' from https://formspree.io/f/xyzabcd
+  // Formspree form IDs (https://formspree.io/f/<id>); both deliver to SITE.email.
+  formspree: { rental: 'maeepeqo', deals: 'xzeejedj' },
   tallyFormId: '', // e.g. 'w4Zk9P' from https://tally.so/r/w4Zk9P
   surveyYear: 2027,
 

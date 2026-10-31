@@ -1,0 +1,35 @@
+---
+// Investment deal submission form, delivered by Formspree to SITE.email. Until SITE.formspree.deals
+// is set, it shows an email link instead of a form that would go nowhere.
+import { SITE } from '../site.config';
+---
+{SITE.formspree.deals ? (
+  <form class="form" action={`https://formspree.io/f/${SITE.formspree.deals}`} method="POST">
+    <div class="form-row">
+      <label>Name<input name="name" autocomplete="name" required /></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required /></label>
+    </div>
+    <div class="form-row">
+      <label>Phone (optional)<input name="phone" type="tel" autocomplete="tel" /></label>
+      <label>You are the…
+        <select name="role">
+          <option>Owner</option>
+          <option>Agent</option>
+          <option>Wholesaler</option>
+          <option>Other</option>
+        </select>
+      </label>
+    </div>
+    <div class="form-row">
+      <label>Property location<input name="location" placeholder="City or address" required /></label>
+      <label>Asking price<input name="asking_price" placeholder="$" /></label>
+    </div>
+    <label>Listing or offering memo link (optional)<input name="link" type="url" placeholder="https://" /></label>
+    <label>Details<textarea name="message" placeholder="Unit mix, current rents, condition, timeline…" required></textarea></label>
+    <input type="hidden" name="_subject" value="Investment property deal" />
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+    <div><button class="btn btn-primary" type="submit">Send deal</button></div>
+  </form>
+) : (
+  <a class="btn btn-ghost" href={`mailto:${SITE.email}?subject=Investment property deal`}>Email us the details</a>
+)}

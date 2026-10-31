@@ -1,13 +1,13 @@
 ---
-// Rental inquiry form, delivered by Formspree to SITE.email. Until SITE.formspreeId is set,
+// Rental inquiry form, delivered by Formspree to SITE.email. Until SITE.formspree.rental is set,
 // it shows email/phone instead of a form that would go nowhere.
 import { SITE } from '../site.config';
 
 interface Props { homes: { id: string; label: string; market: 'socal' | 'bend' }[] }
 const { homes } = Astro.props;
 ---
-{SITE.formspreeId ? (
-  <form class="form" action={`https://formspree.io/f/${SITE.formspreeId}`} method="POST">
+{SITE.formspree.rental ? (
+  <form class="form" action={`https://formspree.io/f/${SITE.formspree.rental}`} method="POST">
     <div class="form-row">
       <label>Name<input name="name" autocomplete="name" required /></label>
       <label>Email<input name="email" type="email" autocomplete="email" required /></label>
@@ -26,7 +26,8 @@ const { homes } = Astro.props;
         </select>
       </label>
     </div>
-    <label>Message<textarea name="message" placeholder="Move-in timing, household size, pets, questions…" required></textarea></label>
+    <label>Message<textarea name="message" placeholder="Move-in timing, pets, questions…" required></textarea></label>
+    <input type="hidden" name="_subject" value="Rental inquiry" />
     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
     <div><button class="btn btn-primary" type="submit">Send inquiry</button></div>
   </form>
