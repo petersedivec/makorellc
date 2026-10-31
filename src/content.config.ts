@@ -27,6 +27,7 @@ const homes = defineCollection({
             name: z.string(), // "Unit A", "Upstairs"
             beds: z.number(),
             baths: z.number(),
+            description: z.string().optional(), // plain text; blank lines separate paragraphs
             status: status.default('occupied'),
             zillowUrl: z.url().optional(),
             photos: z.array(image()).default([]), // a few headline shots

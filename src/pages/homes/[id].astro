@@ -51,6 +51,11 @@ const inquire = url(`contact/?home=${home.id}`);
                 <span class={u.status === 'available' ? 'badge badge-available' : 'badge'}>{u.status}</span>
                 {u.zillowUrl && <a href={u.zillowUrl} target="_blank" rel="noopener">View on Zillow →</a>}
               </div>
+              {u.description && (
+                <div class="unit-desc">
+                  {u.description.trim().split(/\n\s*\n/).map((para) => <p>{para}</p>)}
+                </div>
+              )}
               {u.photos.length > 0 && (
                 <div class="unit-photos">
                   {u.photos.map((p, i) => <Image src={p} alt={`${u.name}, photo ${i + 1}`} widths={[400, 800]} sizes="(max-width: 700px) 100vw, 360px" />)}
@@ -82,5 +87,7 @@ const inquire = url(`contact/?home=${home.id}`);
   .units { margin-top: 40px; display: grid; gap: 20px; }
   .unit-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
   .unit-head h3 { margin: 0; }
+  .unit-desc { padding: 0 22px 6px; max-width: 46rem; color: var(--ink-2); }
+  .unit-desc p { margin: 0 0 12px; }
   .unit-photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; padding: 0 22px 22px; }
 </style>

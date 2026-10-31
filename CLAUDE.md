@@ -28,13 +28,15 @@ DNS is at GoDaddy. Google Workspace email uses the domain's **MX/TXT records: ne
 - **Blur house numbers and license plates** on exterior shots (Gaussian blur over the region) and check at full size before committing. Skip photos showing tenants' belongings, kids' names, or family photos.
 - External IDs pending Peter's signups: `formspreeId`, `tallyFormId` in `src/site.config.ts`. The components fall back to email/phone until set. `stessaUrl` is the generic `https://www.stessa.com` login.
 - Contact info (email/phone) appears on the Contact and Residents pages, not in the footer (Peter's call).
+- **Descriptions:** source of truth is the Drive doc "Property Listing Descriptions — Final". Property text is the home's Markdown body; unit text is `units[].description`. Keep out move-in dates, deposits, fee amounts and tenant details; avoid wording that signals a preference about children/familial status (fair housing).
 
-## Status (end of 2026-10-29)
-Done: skeleton, all pages, survey results (2024 + 2026 from full response CSVs), unit lists, photos for all 6 properties (Peter's Hero picks plus a few headline shots per unit; house numbers/plates blurred). Contact page split into renting / investment deals. Nothing pushed; Pages not enabled yet.
+## Status (end of 2026-10-31)
+Done: skeleton, all pages, survey results (2024 + 2026 from full response CSVs), unit lists, photos for all 6 properties (Peter's Hero picks plus a few headline shots per unit; house numbers/plates blurred), property + unit descriptions, Bend beds/baths (both 3 / 2.5). Contact page split into renting / investment deals. Nothing pushed; Pages not enabled yet.
 
 Open items waiting on Peter:
 - San Clemente Unit 1 still uses the earlier Drive photos (no Unit 1 folder in `raw/`).
 - 2025 survey: Peter links the 2025 Form responses to a Sheet; then add `2025` to `src/data/survey.json` (only 8 responses; numbers are currently only in chart images).
 - Confirm "You said, we did" items in `src/data/survey.json` (`confirmed: true` + `did`).
-- Formspree + Tally signups, home descriptions, About copy review, design feedback.
+- Long Beach: Peter's edit dropped Unit 3's parking (private + tandem space) and Unit 4's 20'×18' two-car garage and Fios/Comcast wiring. Confirm whether to restore.
+- Formspree + Tally signups, About copy review, design feedback.
 - Then: push, enable Pages (Source: GitHub Actions), review, and run the DNS cutover.
