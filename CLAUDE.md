@@ -5,7 +5,7 @@ Marketing site for **Mako Real Estate**, Peter Sedivec's owner-operated rental b
 ## Commands
 - `npm run dev`: dev server (see AGENTS.md: `astro dev --background` / `astro dev stop`)
 - `npm run build`: must pass before committing; the content schema rejects bad home data
-- `npm run preview`: serves `dist/` at `http://localhost:4321/makorellc/`
+- `npm run preview`: serves `dist/` at `http://localhost:4321/`
 
 ## Hard rules
 - **Never write "LLC" in visible text.** No LLC is formed; Peter is a sole proprietor doing business as "Mako Real Estate". The domain `makorellc.com` is fine. Brand, legal line, DRE number and contact info live in `src/site.config.ts`. Never hard-code them in pages.
@@ -16,7 +16,7 @@ Marketing site for **Mako Real Estate**, Peter Sedivec's owner-operated rental b
 - **Don't `git push` unless Peter explicitly asks.** Commit locally; he reviews and pushes.
 
 ## Base path
-Preview deploys to `petersedivec.github.io/makorellc`, so `astro.config.mjs` sets `base: '/makorellc'`. Build every internal link with `url()` from `src/site.config.ts`, never a bare `/path`. At the domain cutover, set `site: 'https://makorellc.com'`, delete `base`, and add `public/CNAME` containing `makorellc.com`.
+Live at `https://makorellc.com` (cut over 2026-10-31): `astro.config.mjs` sets `site: 'https://makorellc.com'` with no `base`, and `public/CNAME` holds the domain. Keep building internal links with `url()` from `src/site.config.ts`, never a bare `/path`.
 
 DNS is at GoDaddy. Google Workspace email uses the domain's **MX/TXT records: never touch them.** The cutover only changes the apex `A` records (to GitHub's 185.199.108–111.153) and the `www` CNAME (to `petersedivec.github.io`).
 
@@ -31,10 +31,10 @@ DNS is at GoDaddy. Google Workspace email uses the domain's **MX/TXT records: ne
 - **Descriptions:** came from the Drive doc "Property Listing Descriptions — Final"; the site has since moved ahead of it (Long Beach Units 3/4 parking, San Clemente Unit 1 bathroom year 2026), so the `.md` files are now the source of truth. Property text is the home's Markdown body; unit text is `units[].description`. Keep out move-in dates, deposits, fee amounts and tenant details; avoid wording that signals a preference about children/familial status (fair housing).
 
 ## Status (end of 2026-10-31)
-Done: skeleton, all pages, survey results (2024 + 2026 from full response CSVs), unit lists, photos for all 6 properties (Peter's Hero picks plus a few headline shots per unit; house numbers/plates blurred), property + unit descriptions, Bend beds/baths (both 3 / 2.5). Contact page split into renting / investment deals. Nothing pushed; Pages not enabled yet.
+Done: skeleton, all pages, survey results (2024 + 2026 from full response CSVs), unit lists, photos for all 6 properties (Peter's Hero picks plus a few headline shots per unit; house numbers/plates blurred), property + unit descriptions, Bend beds/baths (both 3 / 2.5). Contact page split into renting / investment deals with Formspree forms. Survey results 2024–2026 with PDF reports. GA4. Live on makorellc.com via GitHub Pages (Actions).
 
 Open items waiting on Peter:
 - San Clemente Unit 1 still uses the earlier Drive photos (no Unit 1 folder in `raw/`).
 - Confirm "You said, we did" items in `src/data/survey.json` (`confirmed: true` + `did`).
 - Tally signup, About copy review, design feedback.
-- Then: push, enable Pages (Source: GitHub Actions), review, and run the DNS cutover.
+- Privacy page (GA disclosure, form data) not written yet.

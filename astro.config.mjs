@@ -2,11 +2,9 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// Preview lives at petersedivec.github.io/makorellc. At the domain cutover:
-// set site to 'https://makorellc.com', delete `base`, and add public/CNAME.
+// Served at the custom domain (public/CNAME), so no base path.
 export default defineConfig({
-  site: 'https://petersedivec.github.io',
-  base: '/makorellc',
+  site: 'https://makorellc.com',
   trailingSlash: 'always',
   integrations: [
     sitemap({
