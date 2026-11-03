@@ -7,6 +7,8 @@ type: "Triplex"
 order: 3
 hero: "../../assets/homes/san-juan-capistrano/hero.jpg"
 gallery:
+  - "../../assets/homes/san-juan-capistrano/front.jpg"
+  - "../../assets/homes/san-juan-capistrano/aerial-top.jpg"
   - "../../assets/homes/san-juan-capistrano/aerial.jpg"
 units:
   - name: "Unit A (downstairs left)"
@@ -22,8 +24,12 @@ units:
     baths: 2
     description: "The largest unit in the building, with three bedrooms and two baths. The remodeled kitchen has white shaker cabinets, quartz countertops, a subway-tile backsplash and an island with seating, and LVT wood-look flooring runs through the living areas. A private backyard with lawn and mature citrus trees gives you room to spread out. The attached garage opens off the living room and holds a stacked washer and dryer. Along with the garage, the unit has two parking spots: one in front of the garage and one in front of the fence beside the home."
     photos:
-      - "../../assets/homes/san-juan-capistrano/unitb-hero.jpg"
+      - "../../assets/homes/san-juan-capistrano/unitb-kitchen.jpg"
+      - "../../assets/homes/san-juan-capistrano/unitb-living.jpg"
+      - "../../assets/homes/san-juan-capistrano/unitb-dining.jpg"
+      - "../../assets/homes/san-juan-capistrano/unitb-bath.jpg"
       - "../../assets/homes/san-juan-capistrano/unitb-backyard.jpg"
+      - "../../assets/homes/san-juan-capistrano/unitb-patio.jpg"
   - name: "Unit C (upstairs)"
     beds: 2
     baths: 1
