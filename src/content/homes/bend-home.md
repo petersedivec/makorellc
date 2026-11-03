@@ -10,9 +10,10 @@ baths: 2.5
 hero: "../../assets/homes/bend-home/hero.jpg"
 gallery:
   - "../../assets/homes/bend-home/kitchen.jpg"
-  - "../../assets/homes/bend-home/kitchen2.jpg"
-  - "../../assets/homes/bend-home/backyard.jpg"
+  - "../../assets/homes/bend-home/dining.jpg"
   - "../../assets/homes/bend-home/bedroom.jpg"
+  - "../../assets/homes/bend-home/bath.jpg"
+  - "../../assets/homes/bend-home/backyard.jpg"
 ---
 A recently remodeled two-story home in an established neighborhood with easy access to all of Bend. Upstairs are three bedrooms and two full baths. The main level has a half bath, a walk-in pantry and a laundry room. The large three-car garage has extensive storage and a bonus office, and side parking by the backyard fits a large trailer or RV.
 

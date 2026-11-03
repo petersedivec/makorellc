@@ -9,7 +9,6 @@ hero: "../../assets/homes/san-juan-capistrano/hero.jpg"
 gallery:
   - "../../assets/homes/san-juan-capistrano/front.jpg"
   - "../../assets/homes/san-juan-capistrano/aerial-top.jpg"
-  - "../../assets/homes/san-juan-capistrano/aerial.jpg"
 units:
   - name: "Unit A (downstairs left)"
     beds: 2

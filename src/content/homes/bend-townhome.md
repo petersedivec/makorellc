@@ -12,6 +12,7 @@ gallery:
   - "../../assets/homes/bend-townhome/living.jpg"
   - "../../assets/homes/bend-townhome/kitchen.jpg"
   - "../../assets/homes/bend-townhome/bedroom.jpg"
+  - "../../assets/homes/bend-townhome/bath.jpg"
   - "../../assets/homes/bend-townhome/backyard.jpg"
 ---
 Located in Bend's Midtown/Orchard District, this well-maintained Pahlisch-built townhome pairs low-maintenance living with a central, walkable location. It's a block from Orchard Park, with its playground, basketball court and Cascade views, and minutes from Albertsons, downtown, the Deschutes River and Midtown Yacht Club.
