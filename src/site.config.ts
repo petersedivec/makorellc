@@ -15,7 +15,7 @@ export const SITE = {
   markets: ['Southern California', 'Central Oregon'],
 
   // Third-party services — empty until Peter creates the accounts.
-  stessaUrl: 'https://www.stessa.com', // tenant portal login link
+  stessaUrl: 'https://resident.stessa.com/pay', // tenant portal login link
   // Formspree form IDs (https://formspree.io/f/<id>); both deliver to SITE.email.
   formspree: { rental: 'maeepeqo', deals: 'xzeejedj' },
   gaId: 'G-S2MV8NNB7S', // Google Analytics 4 Measurement ID, e.g. 'G-XXXXXXXXXX'; empty = no analytics
