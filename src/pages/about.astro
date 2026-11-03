@@ -1,6 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import { SITE, url } from '../site.config';
+import peter from '../assets/about/peter.jpg';
+import peterElizabeth from '../assets/about/peter-elizabeth.jpg';
 ---
 <Base title="About" description="Mako Real Estate is Peter Sedivec's owner-operated rental business in Southern California and Bend, Oregon.">
   <section class="section">
@@ -20,7 +23,7 @@ import { SITE, url } from '../site.config';
         </p>
         <p>
           Since 2024 we've run an annual tenant survey and shared the results — the good and the
-          things to fix — with every household. You can read the
+          things to fix — with every household. You can read the{' '}
           <a href={url('tenant-survey-results/')}>results here</a>.
         </p>
         <p class="muted">
@@ -29,11 +32,32 @@ import { SITE, url } from '../site.config';
         <div class="btn-row">
           <a class="btn btn-primary" href={url('contact/')}>Get in touch</a>
         </div>
+        <p class="family muted">
+          Our family website: <a href="https://kindredcourage.com" target="_blank" rel="noopener">kindredcourage.com</a>
+        </p>
+      </div>
+      <div class="photos">
+        <figure>
+          <Image src={peter} alt={SITE.owner} widths={[360, 720]} sizes="(max-width: 860px) 100vw, 360px" />
+        </figure>
+        <figure>
+          <Image src={peterElizabeth} alt={`Elizabeth and ${SITE.owner}`} widths={[360, 522]} sizes="(max-width: 860px) 100vw, 360px" />
+          <figcaption class="muted">Elizabeth and Peter</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 </Base>
 
 <style>
-  .about { max-width: 780px; }
+  .about { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+  .photos { display: grid; gap: 24px; }
+  figure { margin: 0; }
+  figure img { width: 100%; height: auto; border-radius: 14px; display: block; }
+  figcaption { font-size: 0.88rem; margin-top: 8px; }
+  .family { margin-top: 28px; font-size: 0.92rem; }
+  @media (max-width: 860px) {
+    .about { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+    .photos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  }
 </style>
