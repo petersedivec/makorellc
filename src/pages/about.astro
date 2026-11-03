@@ -26,22 +26,28 @@ import peterElizabeth from '../assets/about/peter-elizabeth.jpg';
           things to fix — with every household. You can read the{' '}
           <a href={url('tenant-survey-results/')}>results here</a>.
         </p>
+        <p>
+          Peter and Elizabeth met in 2007, weeks after Peter bought his first property in Long Beach. In
+          2008 Elizabeth moved in with Peter. Together they've moved many times, bouncing around Southern
+          California, eventually migrating to Bend, Oregon, and living abroad in Abu Dhabi and England.
+          They have fond memories of all their homes, and each of their three children was born in a
+          different one. You can learn more about their journey on Elizabeth's website,{' '}
+          <a href="https://kindredcourage.com" target="_blank" rel="noopener">kindredcourage.com</a>.
+        </p>
         <p class="muted">
           {SITE.owner} is a licensed California real estate professional (DRE #{SITE.dre}).
         </p>
         <div class="btn-row">
           <a class="btn btn-primary" href={url('contact/')}>Get in touch</a>
         </div>
-        <p class="family muted">
-          Our family website: <a href="https://kindredcourage.com" target="_blank" rel="noopener">kindredcourage.com</a>
-        </p>
       </div>
       <div class="photos">
         <figure>
-          <Image src={peter} alt={SITE.owner} widths={[360, 720]} sizes="(max-width: 860px) 100vw, 360px" />
+          <Image src={peter} alt={SITE.owner} widths={[250, 500]} sizes="250px" />
+          <figcaption><a href={SITE.linkedin} target="_blank" rel="noopener">{SITE.owner}</a></figcaption>
         </figure>
         <figure>
-          <Image src={peterElizabeth} alt={`Elizabeth and ${SITE.owner}`} widths={[360, 522]} sizes="(max-width: 860px) 100vw, 360px" />
+          <Image src={peterElizabeth} alt={`Elizabeth and ${SITE.owner}`} widths={[250, 500]} sizes="250px" />
           <figcaption class="muted">Elizabeth and Peter</figcaption>
         </figure>
       </div>
@@ -50,14 +56,13 @@ import peterElizabeth from '../assets/about/peter-elizabeth.jpg';
 </Base>
 
 <style>
-  .about { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+  .about { display: grid; grid-template-columns: minmax(0, 1fr) 246px; gap: 56px; align-items: start; }
   .photos { display: grid; gap: 24px; }
   figure { margin: 0; }
   figure img { width: 100%; height: auto; border-radius: 14px; display: block; }
   figcaption { font-size: 0.88rem; margin-top: 8px; }
-  .family { margin-top: 28px; font-size: 0.92rem; }
   @media (max-width: 860px) {
     .about { grid-template-columns: minmax(0, 1fr); gap: 32px; }
-    .photos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .photos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 60%; }
   }
 </style>

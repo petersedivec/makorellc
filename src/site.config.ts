@@ -8,6 +8,7 @@ export const SITE = {
   // No LLC is formed: never write "LLC" in visible text (the domain name is fine).
   legalLine: 'Peter Sedivec, doing business as Mako Real Estate',
   dre: '01908921',
+  linkedin: 'https://www.linkedin.com/in/petersedivec/',
   email: 'peter@makorellc.com',
   phone: '(310) 462-1343',
   phoneHref: 'tel:+13104621343',
