@@ -30,4 +30,7 @@ const groups = [
 
 <style>
   .group { margin-top: 48px; }
+  /* Two per row: SoCal's four homes fill two even rows instead of three plus one. */
+  .group .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (max-width: 720px) { .group .grid { grid-template-columns: minmax(0, 1fr); } }
 </style>
