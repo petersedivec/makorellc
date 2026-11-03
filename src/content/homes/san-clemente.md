@@ -16,7 +16,8 @@ units:
     description: "A front, downstairs unit with an updated kitchen (quartz countertops and newer refrigerator, dishwasher and stove), a fully remodeled bathroom (2026) and new laminate flooring throughout (2024). The attached garage, which you can enter from the kitchen, holds a stacked washer and dryer."
     photos:
       - "../../assets/homes/san-clemente/unit1-kitchen.jpg"
-      - "../../assets/homes/san-clemente/unit1-hall.jpg"
+      - "../../assets/homes/san-clemente/unit1-bath.jpg"
+      - "../../assets/homes/san-clemente/unit1-bedroom.jpg"
   - name: "Unit 2 (rear, downstairs)"
     beds: 2
     baths: 1

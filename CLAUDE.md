@@ -34,7 +34,6 @@ DNS is at GoDaddy. Google Workspace email uses the domain's **MX/TXT records: ne
 Done: skeleton, all pages, survey results (2024 + 2026 from full response CSVs), unit lists, photos for all 6 properties (Peter's Hero picks plus a few headline shots per unit; house numbers/plates blurred), property + unit descriptions, Bend beds/baths (both 3 / 2.5). Contact page split into renting / investment deals with Formspree forms. Survey results 2024–2026 with PDF reports. GA4. Live on makorellc.com via GitHub Pages (Actions).
 
 Open items waiting on Peter:
-- San Clemente Unit 1 still uses the earlier Drive photos (no Unit 1 folder in `raw/`).
 - Confirm "You said, we did" items in `src/data/survey.json` (`confirmed: true` + `did`).
 - Tally signup, About copy review, design feedback.
 - Privacy page (GA disclosure, form data) not written yet.
